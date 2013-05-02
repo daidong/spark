@@ -65,6 +65,13 @@ import SparkContext._
  * [[http://www.cs.berkeley.edu/~matei/papers/2012/nsdi_spark.pdf Spark paper]] for more details
  * on RDD internals.
  */
+
+/**
+ * @author daidong
+ * The compiler knows more information about types than the JVM runtime can easily represent. 
+ * A Manifest is a way for the compiler to send an inter-dimensional message to the code at 
+ * runtime about the type information that was lost.
+ */
 abstract class RDD[T: ClassManifest](
     @transient private var sc: SparkContext,
     @transient private var deps: Seq[Dependency[_]]

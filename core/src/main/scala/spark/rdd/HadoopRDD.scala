@@ -39,6 +39,7 @@ private[spark] class HadoopPartition(rddId: Int, idx: Int, @transient s: InputSp
  */
 class HadoopRDD[K, V](
     sc: SparkContext,
+    //This annotation specifies that the property or field is not persistent.
     @transient conf: JobConf,
     inputFormatClass: Class[_ <: InputFormat[K, V]],
     keyClass: Class[K],
